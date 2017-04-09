@@ -2,7 +2,7 @@
 
 Use_Case        - Lungu Ana-Maria
                 - Chibici Bianca
-                - Octavia Bejan
+                - Octavian Bejan
                 
                 
                 
