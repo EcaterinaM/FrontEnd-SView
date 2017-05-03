@@ -14,12 +14,14 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 
 @NgModule({
+  /** aici add in momnetul cand iti faci o noua componenta **/
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
     FooterComponent,
     TransportDocComponent,
+
   ],
   imports: [
     BrowserModule,

@@ -1,52 +1,60 @@
 <div class="page-content">
 
+    <popup>Add your custom html elements here</popup>
     <md-card id="first" class="card">
         <md-card-content>
             <h2>Transport Table</h2>
+            <!--iti face autobuzul ala ca icon -->
+            <i class="material-icons">directions_bus</i>
         </md-card-content>
     </md-card>
 
-
     <div class="jumbotron">
-        <ngx-datatable
-                id="eq-table"
-                #table
-                class='material'
-                [columns]='columns'
-                [columnMode]="'force'"
-                [footerHeight]="50"
-                [rowHeight]="'auto'"
-                (rowContextmenu)="onContextMenu($event)"
-                [limit]="10"
-                [rows]='rows'
-                [loadingIndicator]="loadingIndicator"
-                [headerHeight]="50">
 
-            <ngx-datatable-column name="Name">
+        <table id="table" class="table table-hover table-mc-light-blue">
 
-            </ngx-datatable-column>
-            <ngx-datatable-column name="Surname">
 
-            </ngx-datatable-column>
+            <thead>
+            <tr>
+                <th><b>ID</b></th>
+                <th><b>NUME</b></th>
+                <th><b>PRENUME</b></th>
+                <th><b>VERIFICARE</b></th>
+                <th><b>NOTIFICARE</b></th>
+            </tr>
+            </thead>
 
-            <ngx-datatable-column name="Document">
+            <tbody>
+            <!-- aici facem un fel de for in vectorul din .ts si le afisam in tabela -->
+            <tr *ngFor="let x of names">
+                <td>{{ x.value }}</td>
+                <td>{{ x.viewValue }}</td>
+                <td>{{ x.viewValue }}</td>
+                <td>
+                    <!-- aici in momentul cand da click va putea vizualiza un popup cu un preview de document
+                    cu datele primite de student .. nu am reusit sa gasesc un popup bun deci putem face mai multe research pe asta-->
+                    <button md-raised-button>
+                        Vezi document
+                    </button>
+                </td>
+                <td>
+                    <!--momentan aici trebuie sa vedem ce se intampla la nivel de front cand da click -->
+                    <button md-raised-button routerLink="/">
+                        Trimite Notificare
+                    </button>
+                </td>
 
-            </ngx-datatable-column>
+            </tr>
 
-            <ngx-datatable-column name="Send Notification">
-                <ng-template>
-
-                </ng-template>
-            </ngx-datatable-column>
-
-        </ngx-datatable>
-
+            </tbody>
+        </table>
     </div><!--final jumbotron-->
 
 </div>
-
-
-
+<div md-dialog-actions>
+    <button id="donate-dialog-btn" md-button (click)="dialogRef.close(ong)">Donate</button>
+    <button id="close-ong-dialog-btn" md-button (click)="dialogRef.close(false)">Cancel</button>
+</div>
 
 
 
