@@ -1,0 +1,56 @@
+<div class="page-content">
+
+    <md-card id="first" class="card">
+        <md-card-content>
+            <h2>Situatie licente</h2>
+            <!--iti face autobuzul ala ca icon -->
+            <i class="material-icons">description</i>
+        </md-card-content>
+    </md-card>
+
+    <div class="jumbotron">
+
+        <table id="table" class="table table-hover table-mc-light-blue">
+
+
+            <thead>
+            <tr>
+                <th><b>ID</b></th>
+                <th><b>NUME</b></th>
+                <th><b>PRENUME</b></th>
+                <th><b>VERIFICARE</b></th>
+                <th><b>NOTIFICARE</b></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <!-- aici facem un fel de for in vectorul din .ts si le afisam in tabela -->
+            <tr *ngFor="let x of names">
+                <td>{{ x.value }}</td>
+                <td>{{ x.viewValue }}</td>
+                <td>{{ x.viewValue }}</td>
+                <td>
+                    <!-- aici in momentul cand da click va putea vizualiza un popup cu un preview de document
+                    cu datele primite de student .. nu am reusit sa gasesc un popup bun deci putem face mai multe research pe asta-->
+                    <button md-raised-button>
+                        Vezi document
+                    </button>
+                </td>
+                <td>
+                    <!--momentan aici trebuie sa vedem ce se intampla la nivel de front cand da click -->
+                    <button md-raised-button routerLink="/">
+                        Trimite Notificare
+                    </button>
+                </td>
+
+            </tr>
+
+            </tbody>
+        </table>
+    </div><!--final jumbotron-->
+
+</div>
+
+
+
+
