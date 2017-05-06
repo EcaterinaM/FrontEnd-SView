@@ -11,6 +11,11 @@ import { TransportDocComponent } from './components/transportDoc/transportDoc.co
 import { HomeComponent } from './components/home/home.component';
 import { routing } from './app.routing';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { RetragereDocComponent } from './components/retragereDoc/retragereDoc.component';
+import { IntrerupereDocComponent } from './components/intrerupereDoc/intrerupereDoc.component';
+import { SituatieDocComponent } from './components/situatieDoc/situatieDoc.component';
+import { DiplomaDocComponent } from './components/diplomaDoc/diplomaDoc.component';
+import { LicentaDocComponent } from './components/licentaDoc/licentaDoc.component';
 
 
 @NgModule({
@@ -21,6 +26,11 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     HomeComponent,
     FooterComponent,
     TransportDocComponent,
+    RetragereDocComponent,
+    IntrerupereDocComponent,
+    SituatieDocComponent,
+    DiplomaDocComponent,
+    LicentaDocComponent,
 
   ],
   imports: [
