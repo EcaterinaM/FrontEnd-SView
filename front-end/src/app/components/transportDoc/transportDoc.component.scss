@@ -2,6 +2,7 @@
   text-align: center;
   background-color: #336277;
   color: white;
+
 }
 
 .jumbotron {
@@ -14,6 +15,29 @@ i {
 
 span {
   color: red;
+}
+
+li {
+  list-style: none;
+}
+
+.button {
+  margin-right: 50%;
+}
+
+p-dialog {
+  position: relative;
+
+}
+
+p-footer button.btn2 {
+  background-color: darkgreen;
+  color: white;
+}
+
+p-footer button.btn1 {
+  background-color: red;
+  color: white;
 }
 
 /** CSS FOR TABLE **/
