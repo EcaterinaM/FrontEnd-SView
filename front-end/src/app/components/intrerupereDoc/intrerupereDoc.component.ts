@@ -32,4 +32,21 @@ export class IntrerupereDocComponent implements OnInit {
   }
 
 
+  /**
+   * Pnetru popup
+   * @type {boolean}
+   */
+  display1: boolean = false;
+  display2: boolean = false;
+
+  showDialog1() {
+    console.log('e aici');
+    this.display1 = true;
+  }
+
+  showDialog2() {
+    console.log('e aici');
+    this.display2 = true;
+  }
+
 }

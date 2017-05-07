@@ -30,6 +30,10 @@ export class TransportDocComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * Pentru popup
+   * @type {boolean}
+   */
   display1: boolean = false;
   display2: boolean = false;
 

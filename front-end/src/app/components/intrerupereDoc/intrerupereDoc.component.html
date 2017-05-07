@@ -30,15 +30,12 @@
                 <td>{{ x.viewValue }}</td>
                 <td>{{ x.viewValue }}</td>
                 <td>
-                    <!-- aici in momentul cand da click va putea vizualiza un popup cu un preview de document
-                    cu datele primite de student .. nu am reusit sa gasesc un popup bun deci putem face mai multe research pe asta-->
-                    <button md-raised-button>
-                        Vezi document
-                    </button>
+                    <li class="active" align="end">
+                        <button md-raised-button class="button" (click)="showDialog1()" pButton>Vezi documentul</button>
+                    </li>
                 </td>
                 <td>
-                    <!--momentan aici trebuie sa vedem ce se intampla la nivel de front cand da click -->
-                    <button md-raised-button routerLink="/">
+                    <button md-raised-button class="button" (click)="showDialog2()" pButton>
                         Trimite Notificare
                     </button>
                 </td>
@@ -52,5 +49,41 @@
 </div>
 
 
+<!--popup Vizualizare document-->
+<p-dialog [(visible)]="display1"
+          modal="modal"
+          width="1000"
+          height="500"
+          responsive="true"
+          draggable="true"
+          appendToBody="true">
+    <p-header>
+        <h1>Vizualizeaza documentul primit</h1>
+    </p-header>
+
+    <h3>Vizualizeaza documentul primit</h3>
+
+    <p-footer>
+        <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+            <button md-button class="button btn1" pButton icon="fa-close" (click)="display1=false">ANULEAZA</button>
+            <button md-button class="button btn2" pButton icon="fa-check" (click)="sendInformation1()">TRIMITE</button>
+        </div>
+    </p-footer>
+</p-dialog>
+
+<!-- poup de notificare-->
+<p-dialog [(visible)]="display2" modal="modal" width="500" responsive="true">
+
+    <p-header>
+        <i style="color:red;margin-left: 50%; height: 30%;" class="material-icons">help</i>
+        <h2>Esti sigur ce doresti sa trimiti notificarea?</h2>
+    </p-header>
 
 
+    <p-footer>
+        <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+            <button md-button class="button btn1" pButton icon="fa-close" (click)="display2=false">ANULEAZA</button>
+            <button md-button class="button btn2" pButton icon="fa-check" (click)="sendInformation1()">TRIMITE</button>
+        </div>
+    </p-footer>
+</p-dialog>
