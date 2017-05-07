@@ -21,6 +21,30 @@ nav {
   background-color: #336277;
 }
 
+.btn {
+  background-color: transparent;
+}
+
+.btn:hover {
+  text-decoration-style: solid;
+  color: white;
+  text-shadow: 0 0 2px white;
+}
+
+.btn:after {
+  color: white;
+  text-shadow: 0 0 2px white;
+}
+
+.mini-nav {
+  margin-top: 1.6%;
+}
+
+.banner {
+  text-shadow: 2px 2px 8px #1E1E1E;
+}
+
+
 .mini-nav {
   margin-top: 1.6%;
 }
