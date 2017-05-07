@@ -16,7 +16,7 @@ import { IntrerupereDocComponent } from './components/intrerupereDoc/intrerupere
 import { SituatieDocComponent } from './components/situatieDoc/situatieDoc.component';
 import { DiplomaDocComponent } from './components/diplomaDoc/diplomaDoc.component';
 import { LicentaDocComponent } from './components/licentaDoc/licentaDoc.component';
-
+import { InputTextModule, AccordionModule, DialogModule } from 'primeng/primeng';
 
 @NgModule({
   /** aici add in momnetul cand iti faci o noua componenta **/
@@ -41,6 +41,9 @@ import { LicentaDocComponent } from './components/licentaDoc/licentaDoc.componen
     BrowserAnimationsModule,
     MaterialModule.forRoot(),
     NgxDatatableModule,
+    InputTextModule,
+    AccordionModule,
+    DialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,6 +5,7 @@ nav {
   color: white;
   border: none;
   height: 25%;
+  z-index: 1;
 }
 
 #container {
@@ -19,6 +20,11 @@ nav {
 
 .btn {
   background-color: #336277;
+}
+
+.btn2 {
+  align-content: right;
+  float: right;
 }
 
 .btn {
@@ -43,7 +49,6 @@ nav {
 .banner {
   text-shadow: 2px 2px 8px #1E1E1E;
 }
-
 
 .mini-nav {
   margin-top: 1.6%;
