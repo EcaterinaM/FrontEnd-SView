@@ -49,20 +49,41 @@
 </div>
 
 
+
 <!--popup Vizualizare document-->
 <p-dialog [(visible)]="display1"
           modal="modal"
           width="1000"
-          height="500"
+          height="800"
           responsive="true"
           draggable="true"
           appendToBody="true">
     <p-header>
-        <h1>Vizualizeaza documentul primit</h1>
+        <h1>Vizualizeaza documentul primit
+            <i class="material-icons">insert_drive_file</i>
+        </h1>
     </p-header>
-
-    <h3>Vizualizeaza documentul primit</h3>
-
+    <!--aici e codul pt partea de pdf -->
+    <div class="row">
+        <div class="col-md-5">
+            <div class="thumbnail" (click)="pdfShow=!pdfShow">
+                <p>Apasa aici ca sa vezi documentul</p>
+                <pdf-viewer [src]="pdfSrc"
+                            [page]="page"
+                            [original-size]="false"
+                            style="display: block;"
+                ></pdf-viewer>
+            </div>
+            <br>
+        </div>
+        <div class="col-md-7">
+            <div *ngIf="pdfShow">
+                <h4>Cerere diploma</h4>
+                <iframe width="500" height="600" [src]="pageurl" type="application/pdf"></iframe>
+            </div>
+        </div>
+    </div>
+    <!--final cod pdf -->
     <p-footer>
         <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
             <button md-button class="button btn1" pButton icon="fa-close" (click)="display1=false">ANULEAZA</button>
@@ -75,9 +96,9 @@
 <p-dialog [(visible)]="display2" modal="modal" width="500" responsive="true">
 
     <p-header>
-        <i style="color:red;margin-left: 50%; height: 30%;" class="material-icons">help</i>
-        <h2>Esti sigur ce doresti sa trimiti notificarea?</h2>
+        <h2>Esti sigur ca doresti sa trimiti notificarea?</h2>
     </p-header>
+    <i style="color:red;margin-left: 50%; height: 30%;" class="material-icons">help</i>
 
 
     <p-footer>
