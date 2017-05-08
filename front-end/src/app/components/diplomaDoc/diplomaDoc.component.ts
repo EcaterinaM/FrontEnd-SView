@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'diploma-doc',
@@ -25,11 +26,20 @@ export class DiplomaDocComponent implements OnInit {
 
   ];
 
-  constructor() {
+
+  /**Pentru pdf din popup **/
+  pdfSrc = 'https://vadimdez.github.io/ng2-pdf-viewer/pdf-test.pdf';
+  page: number = 1;
+  pageurl: SafeResourceUrl;
+
+  constructor(private domSanitizer: DomSanitizer) {
   }
 
   ngOnInit() {
+    this.pageurl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.pdfSrc);
   }
+
+  /**pdf final**/
 
 
   /**

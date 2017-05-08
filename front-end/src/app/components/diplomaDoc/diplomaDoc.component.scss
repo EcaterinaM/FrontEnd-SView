@@ -30,15 +30,33 @@ p-dialog {
 }
 
 p-footer button.btn2 {
-  background-color: darkgreen;
+  background-color: #336277;
   color: white;
 }
 
 p-footer button.btn1 {
-  background-color: red;
+  background-color: #336277;
   color: white;
 }
 
+//PDF
+
+p-header h2 {
+  font-size: 20px;
+}
+
+p-header i {
+  color: #336277;
+  height: 30%;
+
+}
+
+p-dialog .thumbnail {
+  background-color: #336277;
+  width: 100px;
+  height: 100px;
+  color: white;
+}
 
 /** CSS FOR TABLE **/
 .table {

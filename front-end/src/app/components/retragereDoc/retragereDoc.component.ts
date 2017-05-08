@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'retragere-doc',
@@ -24,12 +25,20 @@ export class RetragereDocComponent implements OnInit {
     {value: '11', viewValue: 'Vlad'},
 
   ];
+  /**Pentru pdf din popup **/
+  pdfSrc = 'https://vadimdez.github.io/ng2-pdf-viewer/pdf-test.pdf';
+  page: number = 1;
+  pageurl: SafeResourceUrl;
 
-  constructor() {
+  constructor(private domSanitizer: DomSanitizer) {
+
   }
 
   ngOnInit() {
+    this.pageurl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.pdfSrc);
   }
+
+  /**pdf final**/
 
   /**
    * Pentru popup
