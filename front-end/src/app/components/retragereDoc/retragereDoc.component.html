@@ -30,15 +30,12 @@
                 <td>{{ x.viewValue }}</td>
                 <td>{{ x.viewValue }}</td>
                 <td>
-                    <!-- aici in momentul cand da click va putea vizualiza un popup cu un preview de document
-                    cu datele primite de student .. nu am reusit sa gasesc un popup bun deci putem face mai multe research pe asta-->
-                    <button md-raised-button>
-                        Vezi document
-                    </button>
+                    <li class="active" align="end">
+                        <button md-raised-button class="button" (click)="showDialog1()" pButton>Vezi documentul</button>
+                    </li>
                 </td>
                 <td>
-                    <!--momentan aici trebuie sa vedem ce se intampla la nivel de front cand da click -->
-                    <button md-raised-button routerLink="/">
+                    <button md-raised-button class="button" (click)="showDialog2()" pButton>
                         Trimite Notificare
                     </button>
                 </td>
@@ -52,5 +49,61 @@
 </div>
 
 
+<!--popup Vizualizare document-->
+<p-dialog [(visible)]="display1"
+          modal="modal"
+          width="1000"
+          height="800"
+          responsive="true"
+          draggable="true"
+          appendToBody="true">
+    <p-header>
+        <h1>Vizualizeaza documentul primit
+            <i class="material-icons">insert_drive_file</i>
+        </h1>
+    </p-header>
+    <!--aici e codul pt partea de pdf -->
+    <div class="row">
+        <div class="col-md-5">
+            <div class="thumbnail" (click)="pdfShow=!pdfShow">
+                <p>Apasa aici ca sa vezi documentul</p>
+                <pdf-viewer [src]="pdfSrc"
+                            [page]="page"
+                            [original-size]="false"
+                            style="display: block;"
+                ></pdf-viewer>
+            </div>
+            <br>
+        </div>
+        <div class="col-md-7">
+            <div *ngIf="pdfShow">
+                <h4>Cerere diploma</h4>
+                <iframe width="500" height="600" [src]="pageurl" type="application/pdf"></iframe>
+            </div>
+        </div>
+    </div>
+    <!--final cod pdf -->
+    <p-footer>
+        <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+            <button md-button class="button btn1" pButton icon="fa-close" (click)="display1=false">ANULEAZA</button>
+            <button md-button class="button btn2" pButton icon="fa-check" (click)="sendInformation1()">TRIMITE</button>
+        </div>
+    </p-footer>
+</p-dialog>
+
+<!-- poup de notificare-->
+<p-dialog [(visible)]="display2" modal="modal" width="500" responsive="true">
+
+    <p-header>
+        <h2>Esti sigur ca doresti sa trimiti notificarea?</h2>
+    </p-header>
+    <i style="color:red;margin-left: 50%; height: 30%;" class="material-icons">help</i>
 
 
+    <p-footer>
+        <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+            <button md-button class="button btn1" pButton icon="fa-close" (click)="display2=false">ANULEAZA</button>
+            <button md-button class="button btn2" pButton icon="fa-check" (click)="sendInformation1()">TRIMITE</button>
+        </div>
+    </p-footer>
+</p-dialog>

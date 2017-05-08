@@ -17,6 +17,8 @@ import { SituatieDocComponent } from './components/situatieDoc/situatieDoc.compo
 import { DiplomaDocComponent } from './components/diplomaDoc/diplomaDoc.component';
 import { LicentaDocComponent } from './components/licentaDoc/licentaDoc.component';
 import { InputTextModule, AccordionModule, DialogModule } from 'primeng/primeng';
+import { PdfViewerComponent } from 'ng2-pdf-viewer';
+
 
 @NgModule({
   /** aici add in momnetul cand iti faci o noua componenta **/
@@ -31,6 +33,8 @@ import { InputTextModule, AccordionModule, DialogModule } from 'primeng/primeng'
     SituatieDocComponent,
     DiplomaDocComponent,
     LicentaDocComponent,
+    PdfViewerComponent,
+
 
   ],
   imports: [

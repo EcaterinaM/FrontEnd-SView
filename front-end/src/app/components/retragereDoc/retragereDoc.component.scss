@@ -16,6 +16,53 @@ span {
   color: red;
 }
 
+li {
+  list-style: none;
+}
+
+.button {
+  margin-right: 50%;
+}
+
+p-dialog {
+  position: relative;
+
+}
+
+p-footer button.btn2 {
+  background-color: #336277;
+  color: white;
+}
+
+p-footer button.btn1 {
+  background-color: #336277;
+  color: white;
+}
+
+p-header h2 {
+  font-size: 20px;
+}
+
+//PDF
+
+p-header h2 {
+  font-size: 20px;
+}
+
+p-header i {
+  color: #336277;
+  height: 30%;
+
+}
+
+p-dialog .thumbnail {
+  background-color: #336277;
+  width: 100px;
+  height: 100px;
+  color: white;
+}
+
+
 /** CSS FOR TABLE **/
 .table {
   width: 100%;
