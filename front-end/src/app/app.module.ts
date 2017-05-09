@@ -18,6 +18,7 @@ import { DiplomaDocComponent } from './components/diplomaDoc/diplomaDoc.componen
 import { LicentaDocComponent } from './components/licentaDoc/licentaDoc.component';
 import { InputTextModule, AccordionModule, DialogModule } from 'primeng/primeng';
 import { PdfViewerComponent } from 'ng2-pdf-viewer';
+import { TransportDocService } from './services/transportDoc.service';
 
 
 @NgModule({
@@ -49,7 +50,7 @@ import { PdfViewerComponent } from 'ng2-pdf-viewer';
     AccordionModule,
     DialogModule
   ],
-  providers: [],
+  providers: [TransportDocService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
