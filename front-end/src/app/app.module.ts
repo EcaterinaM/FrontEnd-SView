@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-import { MaterialModule } from '@angular/material';
+import { MaterialModule, MdButtonModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -16,9 +16,11 @@ import { IntrerupereDocComponent } from './components/intrerupereDoc/intrerupere
 import { SituatieDocComponent } from './components/situatieDoc/situatieDoc.component';
 import { DiplomaDocComponent } from './components/diplomaDoc/diplomaDoc.component';
 import { LicentaDocComponent } from './components/licentaDoc/licentaDoc.component';
-import { InputTextModule, AccordionModule, DialogModule } from 'primeng/primeng';
+import { AccordionModule, DialogModule, InputTextModule } from 'primeng/primeng';
 import { PdfViewerComponent } from 'ng2-pdf-viewer';
 import { TransportDocService } from './services/transportDoc.service';
+import { LoginService } from './services/login.service';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -35,7 +37,7 @@ import { TransportDocService } from './services/transportDoc.service';
     DiplomaDocComponent,
     LicentaDocComponent,
     PdfViewerComponent,
-
+    LoginComponent,
 
   ],
   imports: [
@@ -48,9 +50,10 @@ import { TransportDocService } from './services/transportDoc.service';
     NgxDatatableModule,
     InputTextModule,
     AccordionModule,
-    DialogModule
+    DialogModule,
+    MdButtonModule
   ],
-  providers: [TransportDocService],
+  providers: [TransportDocService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
