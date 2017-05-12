@@ -21,6 +21,7 @@ import { PdfViewerComponent } from 'ng2-pdf-viewer';
 import { TransportDocService } from './services/transportDoc.service';
 import { LoginService } from './services/login.service';
 import { LoginComponent } from './components/login/login.component';
+import {IntrerupereDocService} from "./services/intrerupereDoc.service";
 
 
 @NgModule({
@@ -53,7 +54,7 @@ import { LoginComponent } from './components/login/login.component';
     DialogModule,
     MdButtonModule
   ],
-  providers: [TransportDocService, LoginService],
+  providers: [TransportDocService, LoginService,IntrerupereDocService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

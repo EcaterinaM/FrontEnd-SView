@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
+import { IntrerupereDocService } from '../../services/intrerupereDoc.service';
 
 @Component({
   selector: 'intrerupere-doc',
@@ -28,22 +28,27 @@ export class IntrerupereDocComponent implements OnInit {
 
 
   /**Pentru pdf din popup **/
-  pdfSrc = 'https://vadimdez.github.io/ng2-pdf-viewer/pdf-test.pdf';
-  page: number = 1;
-  pageurl: SafeResourceUrl;
+  /** Folosesc functia facuta in serviciu si imi aduce un pdf in view**/
 
-  constructor(private domSanitizer: DomSanitizer) {
+  constructor(private _httpService: IntrerupereDocService) {
+  }
 
+  /** Functia pe care o apelez in momentul cand dau click pe butonul din popup **/
+  getDoc() {
+    this._httpService.downloadPDF().subscribe(
+      (res) => {
+        var fileURL = URL.createObjectURL(res);
+        window.open(fileURL);
+      }
+    );
   }
 
   ngOnInit() {
-    this.pageurl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.pdfSrc);
   }
 
-  /**pdf final**/
 
   /**
-   * Pnetru popup
+   * Pentru popup
    * @type {boolean}
    */
   display1: boolean = false;
@@ -53,7 +58,7 @@ export class IntrerupereDocComponent implements OnInit {
     console.log('e aici');
     this.display1 = true;
   }
-
+//
   showDialog2() {
     console.log('e aici');
     this.display2 = true;
