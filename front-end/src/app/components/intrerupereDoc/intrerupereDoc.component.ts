@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { IntrerupereDocService } from '../../services/intrerupereDoc.service';
+import {Component, OnInit} from "@angular/core";
+import {IntrerupereDocService} from "../../services/intrerupereDoc.service";
 
 @Component({
   selector: 'intrerupere-doc',
@@ -9,7 +9,7 @@ import { IntrerupereDocService } from '../../services/intrerupereDoc.service';
 
 export class IntrerupereDocComponent implements OnInit {
 
-
+  //
   /**vectorul cu numele hardcodate **/
   names = [
     {value: '1', viewValue: 'Bianca'},

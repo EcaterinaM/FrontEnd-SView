@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
+import {Component, OnInit} from "@angular/core";
+import {DiplomaDocService} from "../../services/diplomaDoc.service";
 
 @Component({
   selector: 'diploma-doc',
@@ -28,18 +28,24 @@ export class DiplomaDocComponent implements OnInit {
 
 
   /**Pentru pdf din popup **/
-  pdfSrc = 'https://vadimdez.github.io/ng2-pdf-viewer/pdf-test.pdf';
-  page: number = 1;
-  pageurl: SafeResourceUrl;
+  /** Folosesc functia facuta in serviciu si imi aduce un pdf in view**/
 
-  constructor(private domSanitizer: DomSanitizer) {
+  constructor(private _httpService: DiplomaDocService) {
+  }
+
+//
+  /** Functia pe care o apelez in momentul cand dau click pe butonul din popup **/
+  getDoc() {
+    this._httpService.downloadPDF().subscribe(
+      (res) => {
+        var fileURL = URL.createObjectURL(res);
+        window.open(fileURL);
+      }
+    );
   }
 
   ngOnInit() {
-    this.pageurl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.pdfSrc);
   }
-
-  /**pdf final**/
 
 
   /**
