@@ -11,11 +11,14 @@ export class LoginComponent {
 
   public user = new User('', '');
   public errorMsg = '';
+  public loggedIn: boolean;
 
   constructor(private _service: LoginService) {
+    this.loggedIn = true;
   }
 
   login() {
+
     if (!this._service.login(this.user)) {
       this.errorMsg = 'Failed to login';
     }

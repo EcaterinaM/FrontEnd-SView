@@ -15,8 +15,11 @@ var users = [
 @Injectable()
 export class LoginService {
 
+  private loggedIn: boolean = false;
+
   constructor(private _router: Router) {
   }
+
 
   logout() {
     localStorage.removeItem("user");
@@ -28,10 +31,15 @@ export class LoginService {
     if (authenticatedUser && authenticatedUser.password === user.password) {
       localStorage.setItem("user", authenticatedUser.email);
       this._router.navigate(['home']);
-      return true;
+      this.loggedIn = true;
     }
-    return false;
 
+    this.loggedIn = false;
+
+  }
+
+  isLoggedIn() {
+    return this.loggedIn;
   }
 
   checkCredentials() {
@@ -39,4 +47,5 @@ export class LoginService {
       this._router.navigate(['login']);
     }
   }
+
 }

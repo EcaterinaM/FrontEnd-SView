@@ -7,3 +7,36 @@
   font-size: 1.2em;
 }
 
+/*Normal screen*/
+@media screen and (max-width: 1280px) {
+  #footer {
+    padding: 3em 0 3em 0;
+    margin-bottom: 0;
+  }
+  #footer .container {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 840px) {
+
+  #footer {
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  #footer .container {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #footer {
+    padding: 2em 20px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+}
+
+
+

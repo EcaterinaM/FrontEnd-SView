@@ -12,7 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 /** Routes for all our pages in the app **/
 /** in momentul cand termni o pagina trebuie sa ii faci ruta..deci redirectionezi cumva catre componenta creata **/
 export const appRoutes: Routes = [
-  {path: '', redirectTo: '/login', pathMatch: 'full'},
+  {path: '', component: LoginComponent},
   {path: 'home', component: HomeComponent},
   {path: 'transportDoc', component: TransportDocComponent},
   {path: 'retragereDoc', component: RetragereDocComponent},
