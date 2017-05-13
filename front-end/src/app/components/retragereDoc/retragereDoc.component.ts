@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { SafeResourceUrl } from '@angular/platform-browser';
+import { RetragereDocService } from '../../services/retragereDoc.service';
 
 @Component({
   selector: 'retragere-doc',
@@ -30,12 +31,21 @@ export class RetragereDocComponent implements OnInit {
   page: number = 1;
   pageurl: SafeResourceUrl;
 
-  constructor(private domSanitizer: DomSanitizer) {
+  constructor(private _httpService: RetragereDocService) {
 
   }
 
+  getDoc() {
+    this._httpService.downloadPDF().subscribe(
+      (res) => {
+        var fileURL = URL.createObjectURL(res);
+        window.open(fileURL);
+      }
+    );
+  }
+
   ngOnInit() {
-    this.pageurl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.pdfSrc);
+
   }
 
   /**pdf final**/
