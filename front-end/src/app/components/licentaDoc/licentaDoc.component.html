@@ -8,103 +8,66 @@
         </md-card-content>
     </md-card>
 
-    <div class="jumbotron">
+  <div class="jumbotron">
 
-        <table id="table" class="table table-hover table-mc-light-blue">
+    <table id="table" class="table table-hover table-mc-light-blue">
 
 
-            <thead>
-            <tr>
-                <th><b>ID</b></th>
-                <th><b>NUME</b></th>
-                <th><b>PRENUME</b></th>
-                <th><b>VERIFICARE</b></th>
-                <th><b>NOTIFICARE</b></th>
-            </tr>
-            </thead>
+      <thead>
+      <tr>
+        <th><b>ID</b></th>
+        <th><b>NUME</b></th>
+        <th><b>PRENUME</b></th>
+        <th><b>VERIFICARE</b></th>
+        <th><b>NOTIFICARE POZITIVA</b></th>
+        <th><b>NOTIFICARE NEGATIVA</b></th>
+      </tr>
+      </thead>
 
-            <tbody>
-            <!-- aici facem un fel de for in vectorul din .ts si le afisam in tabela -->
-            <tr *ngFor="let x of names">
-                <td>{{ x.value }}</td>
-                <td>{{ x.viewValue }}</td>
-                <td>{{ x.viewValue }}</td>
-                <td>
-                    <li class="active" align="end">
-                        <button md-raised-button class="button" (click)="showDialog1()" pButton>Vezi documentul</button>
-                    </li>
-                </td>
-                <td>
-                    <button md-raised-button class="button" (click)="showDialog2()" pButton>
-                        Trimite Notificare
-                    </button>
-                </td>
+      <tbody>
+      <!-- aici facem un fel de for in vectorul din .ts si le afisam in tabela -->
+      <tr *ngFor="let x of names">
+        <td>{{ x.value }}</td>
+        <td>{{ x.viewValue }}</td>
+        <td>{{ x.viewValue }}</td>
+        <td>
+          <li class="active" align="end">
+            <button md-raised-button class="button" (click)="getDoc()" pButton>Vezi documentul</button>
+          </li>
+        </td>
+        <td>
+          <button md-raised-button class="button" (click)="showDialog2()" pButton>
+            Trimite Notificare Pozitiva
+          </button>
+        </td>
+        <td>
+          <button md-raised-button class="button" (click)="showDialog2()" pButton>
+            Trimite Notificare Negativa
+          </button>
+        </td>
 
-            </tr>
+      </tr>
 
-            </tbody>
-        </table>
-    </div><!--final jumbotron-->
+      </tbody>
+    </table>
+  </div><!--final jumbotron-->
 
 </div>
 
 
-
-<!--popup Vizualizare document-->
-<p-dialog [(visible)]="display1"
-          modal="modal"
-          width="1000"
-          height="800"
-          responsive="true"
-          draggable="true"
-          appendToBody="true">
-    <p-header>
-        <h1>Vizualizeaza documentul primit
-            <i class="material-icons">insert_drive_file</i>
-        </h1>
-    </p-header>
-    <!--aici e codul pt partea de pdf -->
-    <div class="row">
-        <div class="col-md-5">
-            <div class="thumbnail" (click)="pdfShow=!pdfShow">
-                <p>Apasa aici ca sa vezi documentul</p>
-                <pdf-viewer [src]="pdfSrc"
-                            [page]="page"
-                            [original-size]="false"
-                            style="display: block;"
-                ></pdf-viewer>
-            </div>
-            <br>
-        </div>
-        <div class="col-md-7">
-            <div *ngIf="pdfShow">
-                <h4>Cerere diploma</h4>
-                <iframe width="500" height="600" [src]="pageurl" type="application/pdf"></iframe>
-            </div>
-        </div>
-    </div>
-    <!--final cod pdf -->
-    <p-footer>
-        <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
-            <button md-button class="button btn1" pButton icon="fa-close" (click)="display1=false">ANULEAZA</button>
-            <button md-button class="button btn2" pButton icon="fa-check" (click)="sendInformation1()">TRIMITE</button>
-        </div>
-    </p-footer>
-</p-dialog>
-
 <!-- poup de notificare-->
 <p-dialog [(visible)]="display2" modal="modal" width="500" responsive="true">
 
-    <p-header>
-        <h2>Esti sigur ca doresti sa trimiti notificarea?</h2>
-    </p-header>
-    <i style="color:red;margin-left: 50%; height: 30%;" class="material-icons">help</i>
+  <p-header>
+    <h2>Esti sigur ca doresti sa trimiti notificarea?</h2>
+  </p-header>
+  <i style="color:red;margin-left: 50%; height: 40%;" class="material-icons">help</i>
 
 
-    <p-footer>
-        <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
-            <button md-button class="button btn1" pButton icon="fa-close" (click)="display2=false">ANULEAZA</button>
-            <button md-button class="button btn2" pButton icon="fa-check" (click)="sendInformation1()">TRIMITE</button>
-        </div>
-    </p-footer>
+  <p-footer>
+    <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+      <button md-button class="button btn1" pButton icon="fa-close" (click)="display2=false">ANULEAZA</button>
+      <button md-button class="button btn2" pButton icon="fa-check" (click)="sendInformation1()">TRIMITE</button>
+    </div>
+  </p-footer>
 </p-dialog>
