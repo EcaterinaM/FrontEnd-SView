@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import {Component, OnInit} from "@angular/core";
+import {SituatieDocService} from "../../services/situatieDoc.service";
 
 @Component({
   selector: 'situatie-doc',
@@ -27,19 +27,25 @@ export class SituatieDocComponent implements OnInit {
   ];
 
   /**Pentru pdf din popup **/
-  pdfSrc = 'https://vadimdez.github.io/ng2-pdf-viewer/pdf-test.pdf';
-  page: number = 1;
-  pageurl: SafeResourceUrl;
 
-  constructor(private domSanitizer: DomSanitizer) {
 
+  constructor(private _httpService: SituatieDocService) {
+
+  }
+
+  /** Functia pe care o apelez in momentul cand dau click pe butonul din popup **/
+  getDoc() {
+    this._httpService.downloadPDF().subscribe(
+      (res) => {
+        const fileURL = URL.createObjectURL(res);
+        window.open(fileURL);
+      }
+    );
   }
 
   ngOnInit() {
-    this.pageurl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.pdfSrc);
-  }
 
-  /**pdf final**/
+  }
 
 
   /**
@@ -49,10 +55,6 @@ export class SituatieDocComponent implements OnInit {
   display1: boolean = false;
   display2: boolean = false;
 
-  showDialog1() {
-    console.log('e aici');
-    this.display1 = true;
-  }
 
   showDialog2() {
     console.log('e aici');
