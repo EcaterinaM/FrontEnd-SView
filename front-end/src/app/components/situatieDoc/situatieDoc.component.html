@@ -1,73 +1,83 @@
-<div class="page-content">
+<div class="main-content">
+    <navbar></navbar>
 
-    <md-card id="first" class="card">
-        <md-card-content>
-            <h2>Situatie Scolara</h2>
-            <!--iti face autobuzul ala ca icon -->
-            <i class="material-icons">info_outline</i>
-        </md-card-content>
-    </md-card>
+    <div class="page-content">
 
-    <div class="jumbotron">
+        <md-card id="first" class="card">
+            <md-card-content>
+                <h2>Situatie Scolara</h2>
+                <!--iti face autobuzul ala ca icon -->
+                <i class="material-icons">info_outline</i>
+            </md-card-content>
+        </md-card>
 
-        <table id="table" class="table table-hover table-mc-light-blue">
+        <div class="jumbotron">
 
-          <thead>
-          <tr>
-            <th><b>ID</b></th>
-            <th><b>NUME</b></th>
-            <th><b>PRENUME</b></th>
-            <th><b>VERIFICARE</b></th>
-            <th><b>NOTIFICARE POZITIVA</b></th>
-            <th><b>NOTIFICARE NEGATIVA</b></th>
-          </tr>
-          </thead>
+            <table id="table" class="table table-hover table-mc-light-blue">
 
-            <tbody>
-            <!-- aici facem un fel de for in vectorul din .ts si le afisam in tabela -->
-            <tr *ngFor="let x of names">
-                <td>{{ x.value }}</td>
-                <td>{{ x.viewValue }}</td>
-                <td>{{ x.viewValue }}</td>
-                <td>
-                    <li class="active" align="end">
-                      <button md-raised-button class="button" (click)="getDoc()" pButton>Vezi documentul</button>
-                    </li>
-                </td>
-                <td>
-                    <button md-raised-button class="button" (click)="showDialog2()" pButton>
-                      Trimite Notificare Pozitiva
-                    </button>
-                </td>
-              <td>
-                <button md-raised-button class="button" (click)="showDialog2()" pButton>
-                  Trimite Notificare Negativa
+
+                <thead>
+                <tr>
+                    <th><b>ID</b></th>
+                    <th><b>NUME</b></th>
+                    <th><b>PRENUME</b></th>
+                    <th><b>VERIFICARE</b></th>
+                    <th><b>NOTIFICARE POZITIVA</b></th>
+                    <th><b>NOTIFICARE NEGATIVA</b></th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <!-- aici facem un fel de for in vectorul din .ts si le afisam in tabela -->
+                <tr *ngFor="let x of names">
+                    <td>{{ x.value }}</td>
+                    <td>{{ x.viewValue }}</td>
+                    <td>{{ x.viewValue }}</td>
+                    <td>
+                        <li class="active" align="end">
+                            <button md-raised-button class="button" (click)="getDoc()" pButton>Vezi documentul</button>
+                        </li>
+                    </td>
+                    <td>
+                        <button md-raised-button class="button" (click)="showDialog2()" pButton>
+                            Trimite Notificare Pozitiva
+                        </button>
+                    </td>
+                    <td>
+                        <button md-raised-button class="button" (click)="showDialog2()" pButton>
+                            Trimite Notificare Negativa
+                        </button>
+                    </td>
+
+                </tr>
+
+                </tbody>
+            </table>
+        </div><!--final jumbotron-->
+
+    </div>
+
+
+    <!-- poup de notificare-->
+    <p-dialog [(visible)]="display2" modal="modal" width="500" responsive="true">
+
+        <p-header>
+            <td><i class="material-icons">error outline</i></td>
+        </p-header>
+        <h2>Esti sigur ca doresti sa trimiti notificarea?</h2>
+
+
+        <p-footer>
+            <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+                <button md-button class="button btn1" pButton icon="fa-close" (click)="display2=false">ANULEAZA</button>
+                <button md-button class="button btn2" pButton icon="fa-check" (click)="sendInformation1()">TRIMITE
                 </button>
-              </td>
+            </div>
+        </p-footer>
+    </p-dialog>
 
-            </tr>
 
-            </tbody>
-        </table>
-    </div><!--final jumbotron-->
+    <my-footer class="my-ft"></my-footer>
 
 </div>
 
-
-<!-- pop-up de notificare-->
-<p-dialog [(visible)]="display2" modal="modal" width="500" responsive="true">
-
-  <p-header>
-    <h2>Esti sigur ca doresti sa trimiti notificarea?</h2>
-  </p-header>
-  <i style="color:red;margin-left: 50%; height: 40%;" class="material-icons">help</i>
-
-
-  <p-footer>
-    <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
-      <button md-button class="button btn1" pButton icon="fa-close" (click)="display2=false">ANULEAZA</button>
-      <button md-button class="button btn2" pButton icon="fa-check" (click)="sendInformation1()">TRIMITE</button>
-    </div>
-  </p-footer>
-</p-dialog>
-//
