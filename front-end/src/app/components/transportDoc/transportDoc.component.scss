@@ -5,6 +5,12 @@
 
 }
 
+.page-content:after {
+  content: "";
+  display: block;
+  height: 60px;
+}
+
 .jumbotron {
   margin-top: 4%;
 }
@@ -51,7 +57,7 @@ p-header h2 {
 }
 
 p-header i {
-  color: #336277;
+  color: #E2C223;
   height: 30%;
 
 }

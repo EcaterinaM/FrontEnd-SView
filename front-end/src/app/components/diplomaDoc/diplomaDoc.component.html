@@ -1,4 +1,7 @@
-<div class="page-content">
+<div class="main-container">
+    <navbar></navbar>
+
+    <div class="page-content">
 
     <md-card id="first" class="card">
         <md-card-content>
@@ -59,9 +62,9 @@
 <p-dialog [(visible)]="display2" modal="modal" width="500" responsive="true">
 
   <p-header>
-    <h2>Esti sigur ca doresti sa trimiti notificarea?</h2>
+      <td><i class="material-icons">error outline</i></td>
   </p-header>
-  <i style="color:red;margin-left: 50%; height: 40%;" class="material-icons">help</i>
+    <h2>Esti sigur ca doresti sa trimiti notificarea?</h2>
 
 
   <p-footer>
@@ -71,3 +74,6 @@
     </div>
   </p-footer>
 </p-dialog>
+
+    <my-footer class="my-ft"></my-footer>
+</div>

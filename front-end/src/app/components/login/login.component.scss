@@ -1,5 +1,10 @@
 .container {
   margin-left: auto;
   margin-right: auto;
-  width: 17em
+  width: 17em;
+
+}
+
+.container > .my-ft {
+  background-color: red !important;
 }
