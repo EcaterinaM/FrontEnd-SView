@@ -20,7 +20,7 @@ export class LoginComponent {
   login() {
 
     if (!this._service.login(this.user)) {
-      this.errorMsg = 'Failed to login';
+      this.errorMsg = 'Eroare la conectare!';
     }
   }
 }
