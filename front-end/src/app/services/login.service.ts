@@ -8,8 +8,8 @@ export class User {
 }
 
 var users = [
-  new User('admin@admin.com', 'admin'),
-  new User('user@gmail.com', 'user')
+  new User('elena.hardon@info.uaic.ro', '123456'),
+  new User('ecaterina.manolache@info.uaic.ro', '123456')
 ];
 
 @Injectable()
