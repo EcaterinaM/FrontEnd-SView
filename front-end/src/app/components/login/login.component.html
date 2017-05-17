@@ -1,33 +1,32 @@
-<div class="container">
-  <div class="panel-body">
-    <div class="row">
-      <div class="input-field col s12">
-        <md-input-container>
-          <label for="email">Webmail</label>
-          <input mdInput [(ngModel)]="user.email" id="email"
-                 type="email" class="validate">
-        </md-input-container>
-
+<body>
+<div id="login">
+  <h2 class="banner"><span class="fontawesome-lock"></span>FII DOCUMENTS FLOW</h2>
+</div>
+<div class="login-wrap">
+  <div class="login-html">
+    <div class="login-form">
+      <div class="sign-in-htm">
+        <div class="group">
+          <input mdInput [(ngModel)]="user.email" type="email" class="input" class="icon1" id="email"
+                 placeholder="prenume.nume@info.uaic.ro">
+        </div>
+        <div class="group">
+          <input mdInput [(ngModel)]="user.password"
+                 type="password" id="password" class="input" class="icon2" placeholder="********">
+        </div>
+        <div class="group">
+          <input id="check" type="checkbox" class="check" checked>
+          <label for="check"><span class="icon"></span><font color="#f5f5f5"> Remember me!</font></label>
+        </div>
+        <div class="group">
+          <span>{{errorMsg}}</span>
+          <button (click)="login()"
+                  npm type="submit" name="action" class="button"><font color="white"><b>AUTENTIFICARE</b></font>
+          </button>
+        </div>
       </div>
     </div>
-
-    <div class="row">
-      <div class="input-field col s12">
-        <md-input-container>
-          <label for="password">Password</label>
-          <input mdInput [(ngModel)]="user.password" id="password"
-                 type="password" class="validate">
-
-        </md-input-container>
-      </div>
-    </div>
-    <span>{{errorMsg}}</span>
-    <button md-button (click)="login()"
-            npm type="submit" name="action">Login
-    </button>
   </div>
 </div>
 
-
-
-
+</body>
