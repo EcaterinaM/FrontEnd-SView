@@ -3,17 +3,17 @@
  */
 
 export class Student {
-  private id: number;
-  private matricol_number: string;
-  private first_name: string;
-  private last_name: string;
-  private cnp: number;
-  private identity_card_id: string;
-  private father_initial: string;
-  private adress: String;
-  private webmail: String;
-  private birth_date: String;
-  private password: String;
+  public id: number;
+  public matricol_number: string;
+  public first_name: string;
+  public last_name: string;
+  public cnp: number;
+  public identity_card_id: string;
+  public father_initial: string;
+  public adress: String;
+  public webmail: String;
+  public birth_date: String;
+  public password: String;
 
 
   constructor(object: any) {

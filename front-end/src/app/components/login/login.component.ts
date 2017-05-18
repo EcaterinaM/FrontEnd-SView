@@ -1,5 +1,6 @@
 import { LoginService, User } from '../../services/login.service';
 import { Component } from '@angular/core';
+import { Student } from '../../model/Student.model';
 
 @Component({
   selector: 'login-form',
@@ -18,9 +19,18 @@ export class LoginComponent {
   }
 
   login() {
+    this._service.authentificate(this.user)
+      .subscribe(
+        (data) => this.retrieveData(data),
+        (error) => alert("baaaaad"));
+  }
 
-    if (!this._service.login(this.user)) {
-      this.errorMsg = 'Webmail si/sau parola  gresita!';
-    }
+  retrieveData(responseData: any) {
+    console.log("Successfully logged in");
+    let student = new Student(responseData);
+
+    localStorage.setItem("id", student.id.toString());
+    this._service.login();
+
   }
 }
