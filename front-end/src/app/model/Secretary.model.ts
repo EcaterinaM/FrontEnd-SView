@@ -1,9 +1,9 @@
 export class Secretary {
-  private id: number;
-  private first_name: string;
-  private last_name: string;
-  private webmail: String;
-  private password: String;
+  public id: number;
+  public first_name: string;
+  public last_name: string;
+  public webmail: String;
+  public password: String;
 
 
   constructor(object: any) {

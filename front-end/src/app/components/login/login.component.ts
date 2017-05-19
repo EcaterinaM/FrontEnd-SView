@@ -1,6 +1,6 @@
 import { LoginService, User } from '../../services/login.service';
 import { Component } from '@angular/core';
-import { Student } from '../../model/Student.model';
+import { Secretary } from '../../model/Secretary.model';
 
 @Component({
   selector: 'login-form',
@@ -27,9 +27,9 @@ export class LoginComponent {
 
   retrieveData(responseData: any) {
     console.log("Successfully logged in");
-    let student = new Student(responseData);
+    let secretary = new Secretary(responseData);
 
-    localStorage.setItem("id", student.id.toString());
+    localStorage.setItem("id", secretary.id.toString());
     this._service.login();
 
   }

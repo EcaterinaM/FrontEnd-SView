@@ -33,7 +33,7 @@ export class LoginService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post(
-      this.backendUrl + '/student/login',
+      this.backendUrl + '/secretary/login',
       user,
       {headers: headers})
       .map(res => res.json());
