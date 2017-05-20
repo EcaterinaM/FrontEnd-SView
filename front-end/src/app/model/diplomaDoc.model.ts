@@ -1,21 +1,21 @@
 /**
- * Cererea de diploma
+ * Diploma request model
  */
 export class DiplomaDoc extends Document {
 
   public id: number;
-  public document_name: string;
-  public student_name: string;
-  public current_year: number;
-  public year_of_study: number;
+  public documentName: string;
+  public studentName: string;
+  public currentYear: number;
+  public yearOfStudy: number;
 
   constructor(object: any) {
     super();
     this.id = object.id;
-    this.document_name = object.document_name;
-    this.student_name = object.student_name;
-    this.current_year = object.current_year;
-    this.year_of_study = object.year_of_study;
+    this.documentName = object.documentName;
+    this.studentName = object.studentName;
+    this.currentYear = object.currentYear;
+    this.yearOfStudy = object.yearOfStudy;
   }
 
 }

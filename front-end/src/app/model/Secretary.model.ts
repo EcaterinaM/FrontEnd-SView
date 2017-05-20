@@ -1,17 +1,18 @@
 export class Secretary {
   public id: number;
-  public first_name: string;
-  public last_name: string;
-  public webmail: String;
-  public password: String;
+  public firstName: string;
+  public lastName: string;
+  public webmail: string;
+  public password: string;
 
 
   constructor(object: any) {
     this.id = object.id;
-    this.first_name = object.first_name;
-    this.last_name = object.last_name;
+    this.firstName = object.firstName;
+    this.lastName = object.lastName;
     this.webmail = object.webmail;
     this.password = object.password;
   }
+
 
 }

@@ -8,16 +8,10 @@ export class User {
   }
 }
 
-var users = [
-  new User('elena.hardon@info.uaic.ro', '123456'),
-  new User('ecaterina.manolache@info.uaic.ro', '123456')
-];
-
 @Injectable()
 export class LoginService {
 
   private loggedIn: boolean = false;
-
   private backendUrl: String;
 
   logout() {
@@ -25,10 +19,23 @@ export class LoginService {
     this._router.navigate(['login']);
   }
 
+  /**
+   * Inject Http and Router
+   * @param http
+   * @param _router
+   * backendUrl - is the Url where is the Api
+   */
   constructor(private http: Http, private _router: Router) {
     this.backendUrl = "http://localhost:9666/app";
   }
 
+  /**
+   * This function makes the request and receive Json with the
+   * answer
+   *
+   * @param user
+   * @returns {Observable<R>}
+   */
   authentificate(user: User) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
