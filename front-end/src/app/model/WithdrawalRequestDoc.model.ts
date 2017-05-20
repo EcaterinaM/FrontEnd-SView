@@ -1,34 +1,34 @@
 export class WithdrawalRequestDoc extends Document {
   public id: number;
-  public document_name: string;
-  public student_name: string;
+  public documentName: string;
+  public studentName: string;
   public series: string;
-  public number_id_card: number;
-  public study_year: number;
-  public university_year: number;
-  public type_of_courses: string;
-  public approve_reason: string;
+  public numberIdCard: number;
+  public studyYear: number;
+  public universityYear: number;
+  public typeOfCourses: string;
+  public approveReason: string;
   public date: string;
   public signature: string;
-  public series_bac: string;
-  public number_bac: number;
-  public number_sheet: number;
+  public seriesBac: string;
+  public numberBac: number;
+  public numberSheet: number;
 
   constructor(object: any) {
     super();
     this.id = object.id;
-    this.document_name = object.document_name;
-    this.student_name = object.student_name;
+    this.documentName = object.documentName;
+    this.studentName = object.studentName;
     this.series = object.series;
-    this.number_id_card = object.number_id_card;
-    this.study_year = object.study_year;
-    this.university_year = object.university_year;
-    this.type_of_courses = object.type_of_courses;
-    this.approve_reason = object.approve_reason;
+    this.numberIdCard = object.numberIdCard;
+    this.studyYear = object.studyYear;
+    this.universityYear = object.universityYear;
+    this.typeOfCourses = object.typeOfCourses;
+    this.approveReason = object.approveReason;
     this.date = object.date;
     this.signature = object.signature;
-    this.series_bac = object.series_bac;
-    this.number_bac = object.number_bac;
-    this.number_sheet = object.number_sheet;
+    this.seriesBac = object.seriesBac;
+    this.numberBac = object.numberBac;
+    this.numberSheet = object.numberSheet;
   }
 }
