@@ -40,6 +40,7 @@ export class LoginComponent {
    * Error message if something fails on the server side to see int he console
    */
   showError() {
+    this.errorMsg = 'Webmail si/sau parola gresita!';
     console.log("Failed to retrieve data from server.");
   }
 
@@ -55,12 +56,16 @@ export class LoginComponent {
   retrieveData(responseData: any) {
     console.log("Successfully logged in");
     let secretary = new Secretary(responseData);
+    if (secretary.id == null) {
+      this.errorMsg = 'Webmail si/sau parola gresita!'
+    } else {
 
-    localStorage.setItem("id", secretary.id.toString());
+      localStorage.setItem("id", secretary.id.toString());
 
-    console.log(secretary.firstName);
-    console.log(secretary.lastName);
-    this._service.login();
+      console.log(secretary.firstName);
+      console.log(secretary.lastName);
+      this._service.login();
 
+    }
   }
 }
