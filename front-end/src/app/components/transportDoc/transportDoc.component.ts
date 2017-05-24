@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TransportDocService } from '../../services/transportDoc.service';
+import { Student } from '../../model/Student.model';
 
 @Component({
   selector: 'transport-doc',
@@ -8,6 +9,7 @@ import { TransportDocService } from '../../services/transportDoc.service';
 })
 export class TransportDocComponent implements OnInit {
 
+  public listTransportStudents = Array<Student>();
 
   /**vectorul cu numele hardcodate **/
   names = [
@@ -42,8 +44,27 @@ export class TransportDocComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this._httpService.getlistOfStudentsTransport()
+      .subscribe(
+        (data) => this.getStudentList(data),
+        (err) => this.showError()
+      );
+
   }
 
+  getStudentList(responseData: any) {
+    for (let index in responseData) {
+      let student = new Student(responseData[index]);
+      this.listTransportStudents.push(student);
+    }
+
+    console.log(this.listTransportStudents[0].firstName);
+  }
+
+  showError(): void {
+    console.log("Can't fetch data from the server");
+  }
 
   /**
    * Pentru popup

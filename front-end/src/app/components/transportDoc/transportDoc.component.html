@@ -29,10 +29,11 @@
 
                 <tbody>
                 <!-- aici facem un fel de for in vectorul din .ts si le afisam in tabela -->
-                <tr *ngFor="let x of names">
-                    <td>{{ x.value }}</td>
-                    <td>{{ x.viewValue }}</td>
-                    <td>{{ x.viewValue }}</td>
+
+                <tr *ngFor="let student of listTransportStudents; let i = index" [attr.data-index]="i">
+                    <td>{{ i }}</td>
+                    <td>{{ student.firstName }}</td>
+                    <td>{{ student.lastName }}</td>
                     <td>
                         <li class="active" align="end">
                             <button md-raised-button class="button" (click)="getDoc()" pButton>
