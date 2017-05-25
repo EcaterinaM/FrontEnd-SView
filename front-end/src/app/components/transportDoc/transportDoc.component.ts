@@ -28,7 +28,6 @@ export class TransportDocComponent implements OnInit {
 
     this._httpService.downloadPDF(student.id).subscribe(
       (res) => {
-        //var fileURL = URL.createObjectURL(res);
         var fileURL = URL.createObjectURL(res);
         window.open(fileURL);
       }

@@ -1,5 +1,6 @@
-import {Component, OnInit} from "@angular/core";
-import {DiplomaDocService} from "../../services/diplomaDoc.service";
+import { Component, OnInit } from '@angular/core';
+import { DiplomaDocService } from '../../services/diplomaDoc.service';
+import { Student } from '../../model/Student.model';
 
 @Component({
   selector: 'diploma-doc',
@@ -10,21 +11,9 @@ import {DiplomaDocService} from "../../services/diplomaDoc.service";
 export class DiplomaDocComponent implements OnInit {
 
 
-  /**vectorul cu numele hardcodate **/
-  names = [
-    {value: '1', viewValue: 'Bianca'},
-    {value: '2', viewValue: 'Ana'},
-    {value: '3', viewValue: 'Andreea'},
-    {value: '4', viewValue: 'Ecaterina'},
-    {value: '5', viewValue: 'Simina'},
-    {value: '6', viewValue: 'Diana'},
-    {value: '7', viewValue: 'Elena'},
-    {value: '8', viewValue: 'Ionut'},
-    {value: '9', viewValue: 'Octavian'},
-    {value: '10', viewValue: 'Petruta'},
-    {value: '11', viewValue: 'Vlad'},
+  public listTransportStudents = Array<Student>();
 
-  ];
+
 
 
   /**Pentru pdf din popup **/
@@ -45,7 +34,28 @@ export class DiplomaDocComponent implements OnInit {
   }
 
   ngOnInit() {
+    this._httpService.getlistOfStudents(4)
+      .subscribe(
+        (data) => this.getStudentList(data),
+        (err) => this.showError()
+      );
+
   }
+
+
+  getStudentList(responseData: any) {
+    for (let index in responseData) {
+      let student = new Student(responseData[index]);
+      this.listTransportStudents.push(student);
+    }
+
+    console.log(this.listTransportStudents[0].firstName);
+  }
+
+  showError(): void {
+    console.log("Can't fetch data from the server");
+  }
+
 
 
   /**
