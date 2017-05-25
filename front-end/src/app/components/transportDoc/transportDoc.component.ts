@@ -12,22 +12,6 @@ export class TransportDocComponent implements OnInit {
   public listTransportStudents = Array<Student>();
   public rowNumberTable: number;
 
-  /**vectorul cu numele hardcodate **/
-  names = [
-    {value: '1', viewValue: 'Bianca'},
-    {value: '2', viewValue: 'Ana'},
-    {value: '3', viewValue: 'Andreea'},
-    {value: '4', viewValue: 'Ecaterina'},
-    {value: '5', viewValue: 'Simina'},
-    {value: '6', viewValue: 'Diana'},
-    {value: '7', viewValue: 'Elena'},
-    {value: '8', viewValue: 'Ionut'},
-    {value: '9', viewValue: 'Octavian'},
-    {value: '10', viewValue: 'Petruta'},
-    {value: '11', viewValue: 'Vlad'},
-
-  ];
-
   /**Pentru pdf din popup **/
   /** Folosesc functia facuta in serviciu si imi aduce un pdf in view**/
 
@@ -44,11 +28,13 @@ export class TransportDocComponent implements OnInit {
 
     this._httpService.downloadPDF(student.id).subscribe(
       (res) => {
+        //var fileURL = URL.createObjectURL(res);
         var fileURL = URL.createObjectURL(res);
         window.open(fileURL);
       }
     );
   }
+
 
   /**
    * When page is loaded we return a list of student that have a transport Req
