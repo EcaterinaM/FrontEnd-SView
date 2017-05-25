@@ -10,6 +10,7 @@ import { Student } from '../../model/Student.model';
 export class TransportDocComponent implements OnInit {
 
   public listTransportStudents = Array<Student>();
+  public rowNumberTable: number;
 
   /**vectorul cu numele hardcodate **/
   names = [
@@ -34,8 +35,14 @@ export class TransportDocComponent implements OnInit {
   }
 
   /** Functia pe care o apelez in momentul cand dau click pe butonul din popup **/
-  getDoc() {
-    this._httpService.downloadPDF().subscribe(
+  getDoc(index: number) {
+    this.rowNumberTable = index;
+    console.log("Rownum" + index);
+
+    let student = new Student(this.listTransportStudents[this.rowNumberTable]);
+    console.log("Id Student" + student.id);
+
+    this._httpService.downloadPDF(student.id).subscribe(
       (res) => {
         var fileURL = URL.createObjectURL(res);
         window.open(fileURL);
@@ -43,6 +50,9 @@ export class TransportDocComponent implements OnInit {
     );
   }
 
+  /**
+   * When page is loaded we return a list of student that have a transport Req
+   */
   ngOnInit() {
 
     this._httpService.getlistOfStudentsTransport()

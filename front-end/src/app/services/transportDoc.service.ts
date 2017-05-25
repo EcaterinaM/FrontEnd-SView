@@ -19,12 +19,15 @@ export class TransportDocService {
      * backend care se va ocupa de preluarea unui anumit tip de fisier pdf
      *
      */
-    this.backendPdfUrl = "https://vadimdez.github.io/ng2-pdf-viewer/pdf-test.pdf"
+    //this.backendPdfUrl = "https://vadimdez.github.io/ng2-pdf-viewer/pdf-test.pdf"
+    this.backendPdfUrl = "http://localhost:9666/app/ "
   }
 
-  /** GET-ul efectiv **/
-  downloadPDF(): any {
-    return this._http.get(this.backendPdfUrl,
+  /** GET-ul efectiv
+   * Trebuie sa ne facem controllerul la care sa facem requestul de PDF
+   * **/
+  downloadPDF(id: number): any {
+    return this._http.get(this.backendPdfUrl + id.toString(),
       {responseType: ResponseContentType.Blob}).map(
       (res) => {
         return new Blob([res.blob()], {type: 'application/pdf'})

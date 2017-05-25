@@ -31,12 +31,12 @@
                 <!-- aici facem un fel de for in vectorul din .ts si le afisam in tabela -->
 
                 <tr *ngFor="let student of listTransportStudents; let i = index" [attr.data-index]="i">
-                    <td>{{ i }}</td>
+                    <td>{{ i+1 }}</td>
                     <td>{{ student.firstName }}</td>
                     <td>{{ student.lastName }}</td>
                     <td>
                         <li class="active" align="end">
-                            <button md-raised-button class="button" (click)="getDoc()" pButton>
+                            <button md-raised-button class="button" (click)="getDoc(i)" pButton>
                                 <i class="material-icons" style="color: black">search</i> Vezi documentul
                             </button>
                         </li>
