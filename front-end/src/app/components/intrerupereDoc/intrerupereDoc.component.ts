@@ -1,5 +1,6 @@
-import {Component, OnInit} from "@angular/core";
-import {IntrerupereDocService} from "../../services/intrerupereDoc.service";
+import { Component, OnInit } from '@angular/core';
+import { IntrerupereDocService } from '../../services/intrerupereDoc.service';
+import { Student } from '../../model/Student.model';
 
 @Component({
   selector: 'intrerupere-doc',
@@ -9,22 +10,8 @@ import {IntrerupereDocService} from "../../services/intrerupereDoc.service";
 
 export class IntrerupereDocComponent implements OnInit {
 
-  //
-  /**vectorul cu numele hardcodate **/
-  names = [
-    {value: '1', viewValue: 'Bianca'},
-    {value: '2', viewValue: 'Ana'},
-    {value: '3', viewValue: 'Andreea'},
-    {value: '4', viewValue: 'Ecaterina'},
-    {value: '5', viewValue: 'Simina'},
-    {value: '6', viewValue: 'Diana'},
-    {value: '7', viewValue: 'Elena'},
-    {value: '8', viewValue: 'Ionut'},
-    {value: '9', viewValue: 'Octavian'},
-    {value: '10', viewValue: 'Petruta'},
-    {value: '11', viewValue: 'Vlad'},
-
-  ];
+  public listTransportStudents = Array<Student>();
+  public rowNumberTable: number;
 
 
   /**Pentru pdf din popup **/
@@ -34,8 +21,14 @@ export class IntrerupereDocComponent implements OnInit {
   }
 
   /** Functia pe care o apelez in momentul cand dau click pe butonul din popup **/
-  getDoc() {
-    this._httpService.downloadPDF().subscribe(
+  getDoc(index: number) {
+    this.rowNumberTable = index;
+    console.log("Rownum" + index);
+
+    let student = new Student(this.listTransportStudents[this.rowNumberTable]);
+    console.log("Id Student" + student.id);
+
+    this._httpService.downloadPDF(student.id).subscribe(
       (res) => {
         var fileURL = URL.createObjectURL(res);
         window.open(fileURL);
@@ -44,6 +37,25 @@ export class IntrerupereDocComponent implements OnInit {
   }
 
   ngOnInit() {
+    this._httpService.getlistOfStudents(3)
+      .subscribe(
+        (data) => this.getStudentList(data),
+        (err) => this.showError()
+      );
+
+  }
+
+  private getStudentList(responseData: any): void {
+    for (let index in responseData) {
+      let student = new Student(responseData[index]);
+      this.listTransportStudents.push(student);
+    }
+
+    console.log(this.listTransportStudents[0].firstName);
+  }
+
+  private showError(): void {
+    console.log("Can't fetch data from the server");
   }
 
 
@@ -58,7 +70,7 @@ export class IntrerupereDocComponent implements OnInit {
     console.log('e aici');
     this.display1 = true;
   }
-//
+
   showDialog2() {
     console.log('e aici');
     this.display2 = true;
