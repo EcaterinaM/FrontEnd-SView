@@ -18,12 +18,13 @@ export class IntrerupereDocService {
      * backend care se va ocupa de preluarea unui anumit tip de fisier pdf
      *
      */
-    this.backendPdfUrl = "https://vadimdez.github.io/ng2-pdf-viewer/pdf-test.pdf"
+    this.backendPdfUrl = "http://localhost:9666/app/withdrawalDocumentRequest";
   }
 
   /** GET-ul efectiv **/
-  downloadPDF(): any {
-    return this._http.get(this.backendPdfUrl,
+  downloadPDF(id: number): any {
+    let headers = new Headers();
+    return this._http.get(this.backendPdfUrl + '/getPdf/' + id.toString() + '/intrerupere.pdf',
       {responseType: ResponseContentType.Blob}).map(
       (res) => {
         return new Blob([res.blob()], {type: 'application/pdf'})

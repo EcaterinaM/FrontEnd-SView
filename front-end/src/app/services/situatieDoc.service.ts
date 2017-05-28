@@ -1,8 +1,8 @@
 /**
  * Created by SiminaAdela on 13.05.2017.
  */
-import {Injectable} from "@angular/core";
-import {Http, ResponseContentType} from "@angular/http";
+import { Injectable } from '@angular/core';
+import { Http, ResponseContentType, Headers } from '@angular/http';
 
 @Injectable()
 
@@ -13,13 +13,11 @@ import {Http, ResponseContentType} from "@angular/http";
 export class SituatieDocService {
 
   private backendUrl: string;
-
+  private backendPdfUrl: string;
   constructor(private _http: Http) {
-    /** url momentan unul random..dar aici o sa punem pathul catre controllerul din
-     * backend care se va ocupa de preluarea unui anumit tip de fisier pdf
-     *
-     */
-    this.backendUrl = "https://vadimdez.github.io/ng2-pdf-viewer/pdf-test.pdf"
+    this.backendUrl = "http://localhost:9666/app/document";
+
+    this.backendPdfUrl = "https://vadimdez.github.io/ng2-pdf-viewer/pdf-test.pdf"
   }
 
   /** GET-ul efectiv **/
@@ -30,6 +28,20 @@ export class SituatieDocService {
         return new Blob([res.blob()], {type: 'application/pdf'})
       }
     )
+  }
+
+  /**
+   * Return the list of Students who have Transport Request
+   * @returns {Observable<R>}
+   */
+  getlistOfStudents(id: number): any {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this._http.get(
+      this.backendUrl + '/studentList/' + id.toString(),
+      {headers: headers})
+      .map(res => res.json());
+
   }
 
 

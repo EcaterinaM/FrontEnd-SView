@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SafeResourceUrl } from '@angular/platform-browser';
 import { RetragereDocService } from '../../services/retragereDoc.service';
+import { Student } from '../../model/Student.model';
 
 @Component({
   selector: 'retragere-doc',
@@ -10,31 +10,20 @@ import { RetragereDocService } from '../../services/retragereDoc.service';
 
 export class RetragereDocComponent implements OnInit {
 
+  public listTransportStudents = Array<Student>();
 
-  /**vectorul cu numele hardcodate **/
-  names = [
-    {value: '1', viewValue: 'Bianca'},
-    {value: '2', viewValue: 'Ana'},
-    {value: '3', viewValue: 'Andreea'},
-    {value: '4', viewValue: 'Ecaterina'},
-    {value: '5', viewValue: 'Simina'},
-    {value: '6', viewValue: 'Diana'},
-    {value: '7', viewValue: 'Elena'},
-    {value: '8', viewValue: 'Ionut'},
-    {value: '9', viewValue: 'Octavian'},
-    {value: '10', viewValue: 'Petruta'},
-    {value: '11', viewValue: 'Vlad'},
-
-  ];
-  /**Pentru pdf din popup **/
-  pdfSrc = 'https://vadimdez.github.io/ng2-pdf-viewer/pdf-test.pdf';
   page: number = 1;
-  pageurl: SafeResourceUrl;
 
+  /**
+   * Inject dependency of this type of document Service
+   * @param _httpService
+   */
   constructor(private _httpService: RetragereDocService) {
-
   }
 
+  /**
+   * Function to get the Pdf document
+   */
   getDoc() {
     this._httpService.downloadPDF().subscribe(
       (res) => {
@@ -44,11 +33,37 @@ export class RetragereDocComponent implements OnInit {
     );
   }
 
+  /**
+   * On page load get the list of students that have this type of document request
+   */
   ngOnInit() {
-
+    this._httpService.getlistOfStudents(2)
+      .subscribe(
+        (data) => this.getStudentList(data),
+        (err) => this.showError()
+      );
   }
 
-  /**pdf final**/
+  /**
+   * The function that populates the Array of Students
+   * @param responseData
+   */
+  private getStudentList(responseData: any): void {
+    for (let index in responseData) {
+      let student = new Student(responseData[index]);
+      this.listTransportStudents.push(student);
+    }
+
+    console.log(this.listTransportStudents[0].firstName);
+  }
+
+  /**
+   * Print error in the console if we cannnot fetch data from server
+   */
+  private showError(): void {
+    console.log("Can't fetch data from the server");
+  }
+
 
   /**
    * Pentru popup

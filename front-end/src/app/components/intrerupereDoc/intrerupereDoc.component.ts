@@ -11,6 +11,7 @@ import { Student } from '../../model/Student.model';
 export class IntrerupereDocComponent implements OnInit {
 
   public listTransportStudents = Array<Student>();
+  public rowNumberTable: number;
 
 
   /**Pentru pdf din popup **/
@@ -20,8 +21,14 @@ export class IntrerupereDocComponent implements OnInit {
   }
 
   /** Functia pe care o apelez in momentul cand dau click pe butonul din popup **/
-  getDoc() {
-    this._httpService.downloadPDF().subscribe(
+  getDoc(index: number) {
+    this.rowNumberTable = index;
+    console.log("Rownum" + index);
+
+    let student = new Student(this.listTransportStudents[this.rowNumberTable]);
+    console.log("Id Student" + student.id);
+
+    this._httpService.downloadPDF(student.id).subscribe(
       (res) => {
         var fileURL = URL.createObjectURL(res);
         window.open(fileURL);
@@ -30,7 +37,6 @@ export class IntrerupereDocComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this._httpService.getlistOfStudents(3)
       .subscribe(
         (data) => this.getStudentList(data),
@@ -39,7 +45,7 @@ export class IntrerupereDocComponent implements OnInit {
 
   }
 
-  getStudentList(responseData: any) {
+  private getStudentList(responseData: any): void {
     for (let index in responseData) {
       let student = new Student(responseData[index]);
       this.listTransportStudents.push(student);
@@ -48,7 +54,7 @@ export class IntrerupereDocComponent implements OnInit {
     console.log(this.listTransportStudents[0].firstName);
   }
 
-  showError(): void {
+  private showError(): void {
     console.log("Can't fetch data from the server");
   }
 

@@ -1,5 +1,6 @@
-import {Component, OnInit} from "@angular/core";
-import {SituatieDocService} from "../../services/situatieDoc.service";
+import { Component, OnInit } from '@angular/core';
+import { SituatieDocService } from '../../services/situatieDoc.service';
+import { Student } from '../../model/Student.model';
 
 @Component({
   selector: 'situatie-doc',
@@ -10,23 +11,9 @@ import {SituatieDocService} from "../../services/situatieDoc.service";
 export class SituatieDocComponent implements OnInit {
 
 
-  /**vectorul cu numele hardcodate **/
-  names = [
-    {value: '1', viewValue: 'Bianca'},
-    {value: '2', viewValue: 'Ana'},
-    {value: '3', viewValue: 'Andreea'},
-    {value: '4', viewValue: 'Ecaterina'},
-    {value: '5', viewValue: 'Simina'},
-    {value: '6', viewValue: 'Diana'},
-    {value: '7', viewValue: 'Elena'},
-    {value: '8', viewValue: 'Ionut'},
-    {value: '9', viewValue: 'Octavian'},
-    {value: '10', viewValue: 'Petruta'},
-    {value: '11', viewValue: 'Vlad'},
+  public listTransportStudents = Array<Student>();
 
-  ];
 
-  /**Pentru pdf din popup **/
 
 
   constructor(private _httpService: SituatieDocService) {
@@ -44,7 +31,26 @@ export class SituatieDocComponent implements OnInit {
   }
 
   ngOnInit() {
+    this._httpService.getlistOfStudents(5)
+      .subscribe(
+        (data) => this.getStudentList(data),
+        (err) => this.showError()
+      );
 
+
+  }
+
+  private getStudentList(responseData: any): void {
+    for (let index in responseData) {
+      let student = new Student(responseData[index]);
+      this.listTransportStudents.push(student);
+    }
+
+    console.log(this.listTransportStudents[0].firstName);
+  }
+
+  private showError(): void {
+    console.log("Can't fetch data from the server");
   }
 
 
