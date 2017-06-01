@@ -12,7 +12,7 @@ export class IntrerupereDocComponent implements OnInit {
 
   public listTransportStudents = Array<Student>();
   public rowNumberTable: number;
-
+  public nrDoc: number;
 
   /**Pentru pdf din popup **/
   /** Folosesc functia facuta in serviciu si imi aduce un pdf in view**/
@@ -37,7 +37,8 @@ export class IntrerupereDocComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._httpService.getlistOfStudents(3)
+    this.nrDoc = 2;
+    this._httpService.getlistOfStudents(this.nrDoc)
       .subscribe(
         (data) => this.getStudentList(data),
         (err) => this.showError()
@@ -49,9 +50,9 @@ export class IntrerupereDocComponent implements OnInit {
     for (let index in responseData) {
       let student = new Student(responseData[index]);
       this.listTransportStudents.push(student);
+      console.log(student.firstName);
     }
 
-    console.log(this.listTransportStudents[0].firstName);
   }
 
   private showError(): void {

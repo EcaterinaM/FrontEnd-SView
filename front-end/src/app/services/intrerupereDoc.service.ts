@@ -38,6 +38,7 @@ export class IntrerupereDocService {
    * @returns {Observable<R>}
    */
   getlistOfStudents(id: number): any {
+    console.log("ajung aici");
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this._http.get(
