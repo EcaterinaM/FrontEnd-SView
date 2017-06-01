@@ -37,6 +37,7 @@ export class IntrerupereDocComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.listTransportStudents = [];
     this.nrDoc = 2;
     this._httpService.getlistOfStudents(this.nrDoc)
       .subscribe(
@@ -47,6 +48,7 @@ export class IntrerupereDocComponent implements OnInit {
   }
 
   private getStudentList(responseData: any): void {
+    this.listTransportStudents = [];
     for (let index in responseData) {
       let student = new Student(responseData[index]);
       this.listTransportStudents.push(student);
