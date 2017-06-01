@@ -34,6 +34,41 @@ export class TransportDocComponent implements OnInit {
     );
   }
 
+  /**
+   * Pentru popup
+   * @type {boolean}
+   */
+
+
+  display2: boolean = false;
+  display1: boolean = false;
+
+  showDialog1(index: number) {
+    this.rowNumberTable = index;
+    console.log("Rownum" + index);
+
+    let student = new Student(this.listTransportStudents[this.rowNumberTable]);
+    console.log("Id Student" + student.id);
+    this._httpService.sendApprovalNotification(student.webmail).subscribe(
+      (res) => {
+        console.log("ceva");
+      });
+    this.display1 = true;
+  }
+
+  showDialog2(index: number) {
+    this.rowNumberTable = index;
+    console.log("Rownum" + index);
+
+    let student = new Student(this.listTransportStudents[this.rowNumberTable]);
+    console.log("Id Student" + student.id);
+    this._httpService.sendDenialNotification(student.webmail).subscribe(
+      (res) => {
+        console.log("ceva");
+      });
+    console.log('e aici');
+    this.display2 = true;
+  }
 
   /**
    * When page is loaded we return a list of student that have a transport Req
@@ -61,21 +96,5 @@ export class TransportDocComponent implements OnInit {
     console.log("Can't fetch data from the server");
   }
 
-  /**
-   * Pentru popup
-   * @type {boolean}
-   */
-  display1: boolean = false;
-  display2: boolean = false;
-
-  showDialog1() {
-    console.log('e aici');
-    this.display1 = true;
-  }
-
-  showDialog2() {
-    console.log('e aici');
-    this.display2 = true;
-  }
 
 }

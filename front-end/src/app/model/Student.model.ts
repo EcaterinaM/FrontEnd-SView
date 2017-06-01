@@ -10,10 +10,10 @@ export class Student {
   public cnp: number;
   public identityCardId: string;
   public fatherInitial: string;
-  public adress: String;
-  public webmail: String;
-  public birthDate: String;
-  public password: String;
+  public adress: string;
+  public webmail: string;
+  public birthDate: string;
+  public password: string;
 
 
   constructor(object: any) {
