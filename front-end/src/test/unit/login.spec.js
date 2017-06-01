@@ -31,6 +31,10 @@ describe("Unit Tests", function () {
       var EmailIsOk
       [0] = 'alinapopescu@info.uaic.ro';
       /* this is how it should look like */
+      +
+      var EmailIsOk
+      [1] = 'simina.covatariu@gmail.com';
+
 
 
     }])
