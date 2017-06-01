@@ -12,7 +12,7 @@ export class SituatieDocComponent implements OnInit {
 
 
   public listTransportStudents = Array<Student>();
-
+  public rowNumberTable: number;
 
 
 
@@ -21,8 +21,13 @@ export class SituatieDocComponent implements OnInit {
   }
 
   /** Functia pe care o apelez in momentul cand dau click pe butonul din popup **/
-  getDoc() {
-    this._httpService.downloadPDF().subscribe(
+  getDoc(index: number) {
+    this.rowNumberTable = index;
+    console.log("Rownum" + index);
+
+    let student = new Student(this.listTransportStudents[this.rowNumberTable]);
+    console.log("Id Student" + student.id);
+    this._httpService.downloadPDF(student.id).subscribe(
       (res) => {
         const fileURL = URL.createObjectURL(res);
         window.open(fileURL);
@@ -41,12 +46,13 @@ export class SituatieDocComponent implements OnInit {
   }
 
   private getStudentList(responseData: any): void {
+    this.listTransportStudents = [];
     for (let index in responseData) {
       let student = new Student(responseData[index]);
       this.listTransportStudents.push(student);
     }
 
-    console.log(this.listTransportStudents[0].firstName);
+
   }
 
   private showError(): void {

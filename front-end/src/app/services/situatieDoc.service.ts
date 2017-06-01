@@ -13,16 +13,15 @@ import { Http, ResponseContentType, Headers } from '@angular/http';
 export class SituatieDocService {
 
   private backendUrl: string;
-  private backendPdfUrl: string;
+  private backendUrlList: string;
   constructor(private _http: Http) {
-    this.backendUrl = "http://localhost:9666/app/document";
-
-    this.backendPdfUrl = "https://vadimdez.github.io/ng2-pdf-viewer/pdf-test.pdf"
+    this.backendUrl = "http://localhost:9666/app/scolarSituation";
+    this.backendUrlList = "http://localhost:9666/app/document";
   }
 
   /** GET-ul efectiv **/
-  downloadPDF(): any {
-    return this._http.get(this.backendUrl,
+  downloadPDF(id: number): any {
+    return this._http.get(this.backendUrl + '/getPdf/' + id.toString() + '/scolarSituation.pdf',
       {responseType: ResponseContentType.Blob}).map(
       (res) => {
         return new Blob([res.blob()], {type: 'application/pdf'})
@@ -38,7 +37,7 @@ export class SituatieDocService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this._http.get(
-      this.backendUrl + '/studentList/' + id.toString(),
+      this.backendUrlList + '/studentList/' + id.toString(),
       {headers: headers})
       .map(res => res.json());
 

@@ -49,6 +49,7 @@ export class TransportDocComponent implements OnInit {
   }
 
   getStudentList(responseData: any) {
+    this.listTransportStudents = [];
     for (let index in responseData) {
       let student = new Student(responseData[index]);
       this.listTransportStudents.push(student);

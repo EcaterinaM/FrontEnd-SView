@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3fb044eb-b9f9-4d32-92aa-b18156238998" name="Default" comment="">
+    <list default="true" id="3fb044eb-b9f9-4d32-92aa-b18156238998" name="Default" comment="- withdrawal works - removed bugs">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front-end/src/app/components/intrerupereDoc/intrerupereDoc.component.ts" afterPath="$PROJECT_DIR$/front-end/src/app/components/intrerupereDoc/intrerupereDoc.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front-end/src/app/components/situatieDoc/situatieDoc.component.html" afterPath="$PROJECT_DIR$/front-end/src/app/components/situatieDoc/situatieDoc.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front-end/src/app/components/situatieDoc/situatieDoc.component.ts" afterPath="$PROJECT_DIR$/front-end/src/app/components/situatieDoc/situatieDoc.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front-end/src/app/components/transportDoc/transportDoc.component.ts" afterPath="$PROJECT_DIR$/front-end/src/app/components/transportDoc/transportDoc.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front-end/src/app/services/situatieDoc.service.ts" afterPath="$PROJECT_DIR$/front-end/src/app/services/situatieDoc.service.ts" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,34 +32,32 @@
     <favorites_list name="FrontEnd-SView" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file leaf-file-name="transportDoc.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front-end/src/app/components/transportDoc/transportDoc.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+            <state relative-caret-position="146">
+              <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="intrerupereDoc.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/src/app/components/intrerupereDoc/intrerupereDoc.component.ts">
+      <file leaf-file-name="situatieDoc.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front-end/src/app/components/situatieDoc/situatieDoc.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
-              <caret line="59" column="29" lean-forward="true" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="333">
+              <caret line="48" column="36" lean-forward="false" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="intrerupereDoc.component.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/front-end/src/app/components/intrerupereDoc/intrerupereDoc.component.html">
+      <file leaf-file-name="intrerupereDoc.component.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/front-end/src/app/components/intrerupereDoc/intrerupereDoc.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="265">
+              <caret line="51" column="4" lean-forward="false" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -113,7 +115,6 @@
         <option value="$PROJECT_DIR$/front-end/src/app/components/login/login.component.ts" />
         <option value="$PROJECT_DIR$/front-end/src/app/components/transportDoc/transportDoc.component.html" />
         <option value="$PROJECT_DIR$/front-end/src/app/services/transportDoc.service.ts" />
-        <option value="$PROJECT_DIR$/front-end/src/app/components/transportDoc/transportDoc.component.ts" />
         <option value="$PROJECT_DIR$/front-end/src/app/services/diplomaDoc.service.ts" />
         <option value="$PROJECT_DIR$/front-end/src/app/components/diplomaDoc/diplomaDoc.component.ts" />
         <option value="$PROJECT_DIR$/front-end/src/app/components/diplomaDoc/diplomaDoc.component.html" />
@@ -121,9 +122,6 @@
         <option value="$PROJECT_DIR$/front-end/src/app/services/retragereDoc.service.ts" />
         <option value="$PROJECT_DIR$/front-end/src/app/components/retragereDoc/retragereDoc.component.html" />
         <option value="$PROJECT_DIR$/front-end/src/app/components/retragereDoc/retragereDoc.component.ts" />
-        <option value="$PROJECT_DIR$/front-end/src/app/components/situatieDoc/situatieDoc.component.ts" />
-        <option value="$PROJECT_DIR$/front-end/src/app/components/situatieDoc/situatieDoc.component.html" />
-        <option value="$PROJECT_DIR$/front-end/src/app/services/situatieDoc.service.ts" />
         <option value="$PROJECT_DIR$/front-end/src/app/services/licentaDoc.service.ts" />
         <option value="$PROJECT_DIR$/front-end/src/app/components/licentaDoc/licentaDoc.component.ts" />
         <option value="$PROJECT_DIR$/front-end/src/app/components/licentaDoc/licentaDoc.component.html" />
@@ -136,6 +134,10 @@
         <option value="$PROJECT_DIR$/front-end/src/test/unit/situatieDoc.spec.js" />
         <option value="$PROJECT_DIR$/front-end/src/test/unit/diplomaDoc.spec.js" />
         <option value="$PROJECT_DIR$/front-end/src/app/services/intrerupereDoc.service.ts" />
+        <option value="$PROJECT_DIR$/front-end/src/app/components/situatieDoc/situatieDoc.component.html" />
+        <option value="$PROJECT_DIR$/front-end/src/app/services/situatieDoc.service.ts" />
+        <option value="$PROJECT_DIR$/front-end/src/app/components/transportDoc/transportDoc.component.ts" />
+        <option value="$PROJECT_DIR$/front-end/src/app/components/situatieDoc/situatieDoc.component.ts" />
         <option value="$PROJECT_DIR$/front-end/src/app/components/intrerupereDoc/intrerupereDoc.component.ts" />
       </list>
     </option>
@@ -153,7 +155,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
+    <option name="width" value="1370" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectView">
@@ -171,8 +173,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -304,10 +307,6 @@
               <option name="myItemId" value="components" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="transportDoc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -334,10 +333,13 @@
               <option name="myItemId" value="components" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="intrerupereDoc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -796,7 +798,8 @@
       <workItem from="1496218055799" duration="3445000" />
       <workItem from="1496254194241" duration="2664000" />
       <workItem from="1496270573548" duration="1823000" />
-      <workItem from="1496315305428" duration="987000" />
+      <workItem from="1496315305428" duration="2569000" />
+      <workItem from="1496353357598" duration="4701000" />
     </task>
     <task id="LOCAL-00001" summary="Improved footer and navbar">
       <created>1494173029148</created>
@@ -896,11 +899,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496276076430</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="- withdrawal works - removed bugs">
+      <created>1496317697938</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1496317697970</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113205000" />
+    <option name="totallyTimeSpent" value="119488000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -912,7 +922,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1370" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -926,11 +936,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32766616" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3477589" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24222586" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19967267" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24886535" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24885496" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1000,7 +1010,8 @@
     <MESSAGE value="WOOORKS! the PDF" />
     <MESSAGE value="- have list of students from database DiplomaPage &amp; Withdrawal Page" />
     <MESSAGE value="- withdrawal works" />
-    <option name="LAST_COMMIT_MESSAGE" value="- withdrawal works" />
+    <MESSAGE value="- withdrawal works - removed bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="- withdrawal works - removed bugs" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1107,27 +1118,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/src/app/components/situatieDoc/situatieDoc.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/src/app/services/situatieDoc.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="20" column="3" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/src/app/components/situatieDoc/situatieDoc.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front-end/src/app/components/licentaDoc/licentaDoc.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1139,13 +1129,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="34" column="41" lean-forward="false" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/src/app/services/transportDoc.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="20" column="3" lean-forward="false" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -1291,13 +1274,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/front-end/node_modules/@angular/cli/commands/serve.js.map">
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="32" lean-forward="false" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
         </state>
-      </provider>
-      <provider editor-type-id="sourcemapFileViewerProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/front-end/node_modules/@angular/cli/commands/serve.js">
@@ -1343,36 +1326,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/src/app/components/transportDoc/transportDoc.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front-end/src/app/services/intrerupereDoc.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/src/app/components/intrerupereDoc/intrerupereDoc.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="51" lean-forward="false" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/src/app/services/transportDoc.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="28" column="76" lean-forward="true" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/src/app/components/situatieDoc/situatieDoc.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="37" column="85" lean-forward="false" selection-start-line="37" selection-start-column="85" selection-end-line="37" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/src/app/services/situatieDoc.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="39" column="25" lean-forward="false" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/src/app/components/transportDoc/transportDoc.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/src/app/components/situatieDoc/situatieDoc.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="48" column="36" lean-forward="false" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/front-end/src/app/components/intrerupereDoc/intrerupereDoc.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="59" column="29" lean-forward="true" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/src/app/components/intrerupereDoc/intrerupereDoc.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="265">
+          <caret line="51" column="4" lean-forward="false" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
           <folding />
         </state>
       </provider>
